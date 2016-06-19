@@ -12,8 +12,8 @@ UCLASS()
 class BATTLESHIP_API ABattleshipHUD : public AHUD
 {
 	GENERATED_BODY()
-	
-	
+
+	ABattleshipHUD();
 	
 	
 };

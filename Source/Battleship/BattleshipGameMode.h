@@ -3,11 +3,13 @@
 #pragma once
 
 #include "GameFramework/GameMode.h"
+#include "BattleshipGameState.h"
 #include "BattleshipGameMode.generated.h"
 
 /**
  * 
  */
+
 UCLASS()
 class BATTLESHIP_API ABattleshipGameMode : public AGameMode
 {
@@ -16,5 +18,13 @@ class BATTLESHIP_API ABattleshipGameMode : public AGameMode
 public:
 	ABattleshipGameMode();
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Play State")
+	EPlayState ePlayState;
+
+	UFUNCTION(BlueprintCallable, Category = "Play State")
+	EPlayState getPlayState() { return ePlayState; }
+
+	UFUNCTION(BlueprintCallable, Category = "Play State")
+	void setPlayState(EPlayState newState) { ePlayState = newState; }
 	
 };

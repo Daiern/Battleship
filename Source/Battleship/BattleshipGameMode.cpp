@@ -8,6 +8,7 @@ ABattleshipGameMode::ABattleshipGameMode()
 {
 	// use our custom PlayerController class
 	PlayerControllerClass = ABSPlayerController::StaticClass();
+	GameStateClass = ABattleshipGameState::StaticClass();
 
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Blueprints/BP_PlayerPawn"));
@@ -21,6 +22,8 @@ ABattleshipGameMode::ABattleshipGameMode()
 	{
 		HUDClass = BattleshipHUDBPClass.Class;
 	}
+
+	ePlayState = EPlayState::PS_Placement;
 
 
 }
